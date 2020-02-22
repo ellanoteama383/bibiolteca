@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- *
- * @author USER
- */
 public class Biblioteca {
     private ArrayList<Libro> libros;
     private ArrayList<Usuario> usuarios;
@@ -42,30 +33,28 @@ public class Biblioteca {
         libros.add(libro4);
         libros.add(libro5);
         
-        
-        
     }
-    private void registrarUsuario(String cedula){
-        if(verificarUsuario(cedula)){
-            
-        }else{
-            String nombre;
-            String correo;
-            String direccion;
-            String telefono;
-            
-            //nombre
-        }
-
+    
+    private void registrarUsuario(String cedula, String nombre, String correo, String direccion,
+                                    String telefono){
+        
+        Usuario nuevoUsuario = new Usuario(cedula, nombre, correo, direccion, telefono);
+        usuarios.add(nuevoUsuario);
         
     }
     
-    private boolean verificarUsuario(String cedula){
-                for(int i=0;i<usuarios.size();i++ ){
-            
-          
+    public boolean verificarUsuario(String cedula){
+        boolean estado = false;
+        
+        for(int i=0; i<usuarios.size(); i++){
+            if(usuarios.get(i).getCedula().equals(cedula)){
+                estado = true;
+            } else {
+                estado = false;
+            }
         }
-         if(usuarios.get(i).getCedula().equals(cedula)) 
+        
+        return estado;
     }
     
     
