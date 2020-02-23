@@ -5,7 +5,15 @@
  */
 package prestamoLibros;
 
-import vista.crearUsuario;
+import modelo.Biblioteca;
+import vista.VentanaPrincipal;
+
+
+
+
+
+
+
 
 /**
  *
@@ -17,7 +25,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        crearUsuario uiPrestamoLibros = new crearUsuario();
+        VentanaPrincipal ventana= new VentanaPrincipal();
+        ventana.setVisible(true);
+ 
+       
+
+        
     }
     
 }
