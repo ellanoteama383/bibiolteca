@@ -86,5 +86,10 @@ public class Biblioteca {
         
         
     }
+
+    public ArrayList<Libro> getLibros() {
+        return libros;
+    }
+    
     
 }

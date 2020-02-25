@@ -18,6 +18,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     CrearUsuario usuario;
     Biblioteca inicial;
 
+
     /**
      * Creates new form VentanaPrincipal
      */
@@ -25,7 +26,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         inicial = new Biblioteca();
         usuario = new CrearUsuario();
         usuario.setVisible(false);
+       
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
