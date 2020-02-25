@@ -26,7 +26,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         usuario = new CrearUsuario();
         usuario.setVisible(false);
         initComponents();
- 
     }
 
     /**
@@ -106,6 +105,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void btnPrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrestarActionPerformed
         if(evt.getSource()==btnPrestar){
             usuario.setVisible(true);
+            usuario.setUsuariosCopia(inicial.getUsuarios());
         }
     }//GEN-LAST:event_btnPrestarActionPerformed
 
@@ -160,9 +160,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnPrestar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-   
 
-    
- 
+       
 
 }

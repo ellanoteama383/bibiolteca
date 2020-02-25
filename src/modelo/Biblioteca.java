@@ -11,9 +11,19 @@ public class Biblioteca {
 
     public Biblioteca() {
         libros= new ArrayList<>();
+        usuarios = new ArrayList<>();
+        
+        Usuario usuarioEjemplo = new Usuario("Felipe Gutierrez Romero", "1010093086", 
+                "email@gmail.com", "Calle 28 #10-40", "3187921623");
+        usuarios.add(usuarioEjemplo);
         crearLibros();
        
     }
+
+    public ArrayList<Usuario> getUsuarios() {
+        return usuarios;
+    }
+    
     
    
     public  void crearLibros(){
@@ -47,26 +57,22 @@ public class Biblioteca {
         
     }
     
-    public void verificarUsuario(String cedula){
-        
-        
+    public boolean verificarUsuario(String cedula){
+        boolean estado = false;
         
         for(int i=0; i<usuarios.size(); i++){
             if(usuarios.get(i).getCedula().equals(cedula)){
-                
-                
-                JOptionPane.showInternalMessageDialog(null, "El usuario existe");
+                estado = true;
+                break;
             } else {
-                
-                
-                JOptionPane.showInternalMessageDialog(null, "El usuario no existe");
-                
+                estado = false;
+                break;
             }
         }
         
-       
-        
+        return estado;
     }
+    
     public void disponibles(){
       
         String nombre ="Libros disponibles :\n";

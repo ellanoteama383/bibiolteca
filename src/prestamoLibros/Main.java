@@ -9,12 +9,6 @@ import modelo.Biblioteca;
 import vista.VentanaPrincipal;
 
 
-
-
-
-
-
-
 /**
  *
  * @author Felipe
@@ -28,8 +22,6 @@ public class Main {
         VentanaPrincipal ventana= new VentanaPrincipal();
         ventana.setVisible(true);
  
-       
-
         
     }
     
