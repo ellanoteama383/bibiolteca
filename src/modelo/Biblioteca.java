@@ -7,10 +7,12 @@ import javax.swing.JOptionPane;
 public class Biblioteca {
     private ArrayList<Libro> libros;
     private ArrayList<Usuario> usuarios;
+    private ArrayList<Libro> librosPrestados;
    
 
     public Biblioteca() {
         libros= new ArrayList<>();
+        librosPrestados= new ArrayList<>();
         usuarios = new ArrayList<>();
         
         Usuario usuarioEjemplo = new Usuario("Felipe Gutierrez Romero", "1010093086", 
@@ -29,12 +31,12 @@ public class Biblioteca {
     public  void crearLibros(){
    
          Libro libro1 = new Libro("Cien años de soledad","1234567897549",new Date(1940,11,20),
-                                 "Gabriel Garcia Marquez","Novela","1841796",false);
+                                 "Gabriel Garcia Marquez","Novela","1849996",false);
        
         Libro libro2 = new Libro("El alquimista","1234567897999",new Date(1990,12,15),
         "Paulo Coehlo","Ficcion","1841796",false);
         Libro libro3 = new Libro("La insoportable levedad del ser","4321567897549",new Date(1926,01,01),
-        "Milan Kundera","Ficcion","1841796",false);
+        "Milan Kundera","Ficcion","1841799",false);
         Libro libro4 = new Libro("Vuelta al mundo en Ochenta dias","4321512344549",new Date(1918,06,20),
         "Julio Verne","Novela","3241796",false);
         Libro libro5 = new Libro("El coronel no tiene quien le escriba","1234567898909",new Date(1967,11,20),
@@ -49,7 +51,7 @@ public class Biblioteca {
          
     }
     
-    private void registrarUsuario(String cedula, String nombre, String correo, String direccion,
+    public void registrarUsuario(String cedula, String nombre, String correo, String direccion,
                                     String telefono){
         
         Usuario nuevoUsuario = new Usuario(cedula, nombre, correo, direccion, telefono);
@@ -90,6 +92,16 @@ public class Biblioteca {
     public ArrayList<Libro> getLibros() {
         return libros;
     }
+
+    public ArrayList<Libro> getLibrosPrestados() {
+        return librosPrestados;
+    }
     
+    
+    public void prestarLibro(Libro prestado){
+        librosPrestados.add(prestado);
+        libros.remove(prestado);
+        
+    }
     
 }
