@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -20,8 +21,10 @@ public class Libro {
     private String codigo;
     private boolean  prestado;
     private int cantidadPorTitulo;
+    private ArrayList<Usuario> prestamistas;
 
-    public Libro(String nombre, String codigoISBN, Date fechaPublicacion, String autor, String areaInteres, String codigo, boolean prestado) {
+    public Libro(String nombre, String codigoISBN, Date fechaPublicacion, String autor, String areaInteres, String codigo, 
+                            boolean prestado, int cantidadPorTitulo) {
         this.nombre = nombre;
         this.codigoISBN = codigoISBN;
         this.fechaPublicacion = fechaPublicacion;
@@ -29,8 +32,14 @@ public class Libro {
         this.areaInteres = areaInteres;
         this.codigo = codigo;
         this.prestado = prestado;
+        this.cantidadPorTitulo = cantidadPorTitulo;
+        
+        prestamistas = new ArrayList<>();
     }
     
+    public void addPrestamista(Usuario nuevoPrestamista){
+        prestamistas.add(nuevoPrestamista);
+    }
     
     public String getNombre() {
         return nombre;
@@ -96,9 +105,25 @@ public class Libro {
         this.cantidadPorTitulo = cantidadPorTitulo;
     }
     
-    
-    
-    
+    public boolean usuarioConEsteLibro(Usuario prestamista){
+        boolean tiene = false;
+        
+        if(prestamistas.size() != 0){
+            for(int i = 0; i < prestamistas.size(); i++){
+                if(prestamista.getCedula().equalsIgnoreCase(prestamistas.get(i).getCedula()))
+                {
+                    tiene = true;
+                    break;
+                } else {
+                    tiene = false;
+                }
+            }
+        } else {
+            tiene = false;
+        }
+        
+        return tiene;
+    }
     
          
 }
