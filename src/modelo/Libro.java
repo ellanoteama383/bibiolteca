@@ -21,7 +21,7 @@ public class Libro {
     private String codigo;
     private boolean  prestado;
     private int cantidadPorTitulo;
-    private ArrayList<Usuario> prestamistas;
+    private Usuario prestamistas;
 
     public Libro(String nombre, String codigoISBN, Date fechaPublicacion, String autor, String areaInteres, String codigo, 
                             boolean prestado, int cantidadPorTitulo) {
@@ -33,12 +33,15 @@ public class Libro {
         this.codigo = codigo;
         this.prestado = prestado;
         this.cantidadPorTitulo = cantidadPorTitulo;
-        
-        prestamistas = new ArrayList<>();
+       
     }
-    
-    public void addPrestamista(Usuario nuevoPrestamista){
-        prestamistas.add(nuevoPrestamista);
+
+    public void setPrestamistas(Usuario prestamistas) {
+        this.prestamistas = prestamistas;
+    }
+
+    public Usuario getPrestamistas() {
+        return prestamistas;
     }
     
     public String getNombre() {
@@ -104,7 +107,7 @@ public class Libro {
     public void setCantidadPorTitulo(int cantidadPorTitulo) {
         this.cantidadPorTitulo = cantidadPorTitulo;
     }
-    
+    /*
     public boolean usuarioConEsteLibro(Usuario prestamista){
         boolean tiene = false;
         
@@ -123,7 +126,7 @@ public class Libro {
         }
         
         return tiene;
-    }
+    }*/
     
          
 }

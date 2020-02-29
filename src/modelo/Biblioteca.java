@@ -41,15 +41,25 @@ public class Biblioteca {
    
          Libro libro1 = new Libro("Cien años de soledad","1234567897549",new Date(1940,11,20),
                                  "Gabriel Garcia Marquez","Novela","1849996",false, 3);
+   
+         Libro libro2 = new Libro("Cien años de soledad","1234567897549",new Date(1940,11,20),
+                                 "Gabriel Garcia Marquez","Novela","1849991",false, 3);
+    
+         Libro libro3 = new Libro("Cien años de soledad","1234567897549",new Date(1940,11,20),
+                                 "Gabriel Garcia Marquez","Novela","1849994",false, 3);
        
-        Libro libro2 = new Libro("El alquimista","1234567897999",new Date(1990,12,15),
-        "Paulo Coehlo","Ficcion","1841796",false, 3);
-        Libro libro3 = new Libro("La insoportable levedad del ser","4321567897549",new Date(1926,01,01),
-        "Milan Kundera","Ficcion","1841799",false, 3);
-        Libro libro4 = new Libro("Vuelta al mundo en Ochenta dias","4321512344549",new Date(1918,06,20),
-        "Julio Verne","Novela","3241796",false, 3);
-        Libro libro5 = new Libro("El coronel no tiene quien le escriba","1234567898909",new Date(1967,11,20),
-        "Gabriel Garcia Marquez","Novela","1866796",false, 3);
+       
+       
+        Libro libro4 = new Libro("El alquimista","1234567897999",new Date(1990,12,15),
+        "Paulo Coehlo","Ficcion","1841796",false, 2);
+        Libro libro5 = new Libro("El alquimista","1234567897998",new Date(1990,12,15),
+        "Paulo Coehlo","Ficcion","1841797",false, 2);
+        
+        Libro libro6 = new Libro("La insoportable levedad del ser","4321567897549",new Date(1926,01,01),
+        "Milan Kundera","Ficcion","1841790",false, 2);
+         Libro libro7 = new Libro("La insoportable levedad del ser","4321567897549",new Date(1926,01,01),
+        "Milan Kundera","Ficcion","1841799",false, 2);
+       
         
        
         libros.add(libro1);
@@ -57,6 +67,8 @@ public class Biblioteca {
         libros.add(libro3);
         libros.add(libro4);
         libros.add(libro5);
+        libros.add(libro6);
+        libros.add(libro7);
          
     }
     
@@ -108,18 +120,41 @@ public class Biblioteca {
     
     
     public void prestarLibro(Libro prestado){
-        if(prestado.getCantidadPorTitulo() > 0)
-        {
-            prestado.setCantidadPorTitulo(prestado.getCantidadPorTitulo() - 1);
-            prestado.addPrestamista(usuarioActual);
-        }
-        
-        
-        if(prestado.getCantidadPorTitulo() == 0)
-        {
+            
+            prestado.setPrestamistas(usuarioActual);
             librosPrestados.add(prestado);
             libros.remove(prestado);
-        }
+            for(int i=0; i<getLibros().size();i++){
+                if(getLibros() .get(i).getCodigoISBN().equalsIgnoreCase(prestado.getCodigoISBN())){
+                   getLibros().get(i).setCantidadPorTitulo(getLibros().get(i).getCantidadPorTitulo()-1);
+                }
+            }
+    }    
+    public void devolveLibro(Libro dev){
+       
+            librosPrestados.remove(dev);
+            for(int i=0; i<getLibros().size();i++){
+                if(getLibros().get(i).getCodigoISBN().equalsIgnoreCase(dev.getCodigoISBN())){
+                   getLibros().get(i).setCantidadPorTitulo(getLibros().get(i).getCantidadPorTitulo()+1);
+                }
+            }   
+             libros.add(dev);
     }
     
-}
+    public void librosPrestados(){
+         String nombre ="Libros prestados :\n";
+          
+        for(int i=0;i<librosPrestados.size();i++){
+            
+            nombre+=librosPrestados.get(i).getNombre();
+           
+        }
+        JOptionPane.showMessageDialog(null,nombre);
+        
+    }
+            
+            
+        
+    }
+
+

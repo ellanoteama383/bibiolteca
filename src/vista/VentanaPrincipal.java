@@ -5,6 +5,7 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
 import modelo.Biblioteca;
 
 
@@ -28,9 +29,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
        
         initComponents();
-        jInternalFrame1.setVisible(false);
-        jInternalFrame2.setVisible(false);
+        internalRegistro.setVisible(false);
+        internalBuscar.setVisible(false);
          btnAceptar.setVisible(false);
+         jPanel2.setVisible(false);
+         ComprobarCod.setVisible(false);
+         btnDevolverLibro.setVisible(false);
+         txtCodigoLibroDev.setVisible(false);
+         lblCodigoLibroDev.setVisible(false);
         setLocationRelativeTo(null);
     }
 
@@ -43,11 +49,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnPrestar = new javax.swing.JButton();
-        btnDevolver = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        btnDisponibles = new javax.swing.JButton();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
+        internalRegistro = new javax.swing.JInternalFrame();
         btnRegistrar = new javax.swing.JButton();
         lblCedula = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
@@ -61,7 +63,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         lblNombre1 = new javax.swing.JLabel();
         lblError1 = new javax.swing.JLabel();
-        jInternalFrame2 = new javax.swing.JInternalFrame();
+        internalBuscar = new javax.swing.JInternalFrame();
         jLabel2 = new javax.swing.JLabel();
         txtCodigoLibro = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
@@ -70,35 +72,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         lblNombreDato = new javax.swing.JLabel();
         lblAutorDato = new javax.swing.JLabel();
         lblError2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnPrestar = new javax.swing.JButton();
+        btnDevolver = new javax.swing.JButton();
+        btnDisponibles = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnLibrosPrestados = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lblcedulaDev = new javax.swing.JLabel();
+        txtCedulaDev = new javax.swing.JTextField();
+        lblCodigoLibroDev = new javax.swing.JLabel();
+        txtCodigoLibroDev = new javax.swing.JTextField();
+        btnDevolverLibro = new javax.swing.JButton();
+        ComprobarC = new javax.swing.JButton();
+        ComprobarCod = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnPrestar.setText("Prestar");
-        btnPrestar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrestarActionPerformed(evt);
-            }
-        });
-
-        btnDevolver.setText("Devolver");
-        btnDevolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDevolverActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jLabel1.setText("Bienvenidos a la biblioteca");
-
-        btnDisponibles.setText("Libros Disponibles");
-        btnDisponibles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDisponiblesActionPerformed(evt);
-            }
-        });
-
-        jInternalFrame1.setTitle("Registro usuarios");
-        jInternalFrame1.setVisible(true);
+        internalRegistro.setTitle("Registro usuarios");
+        internalRegistro.setVisible(true);
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -139,51 +131,57 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         lblError1.setForeground(new java.awt.Color(255, 0, 0));
 
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                    .addComponent(lblCorreo)
-                                    .addGap(28, 28, 28)
-                                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
-                                    .addComponent(lblNombre1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                    .addComponent(lblDireccion)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                    .addComponent(lblTelefono)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnRegistrar)
-                                        .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(lblError1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(lblCedula)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+        javax.swing.GroupLayout internalRegistroLayout = new javax.swing.GroupLayout(internalRegistro.getContentPane());
+        internalRegistro.getContentPane().setLayout(internalRegistroLayout);
+        internalRegistroLayout.setHorizontalGroup(
+            internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, internalRegistroLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnVerificar)
-                .addGap(103, 103, 103))
+                .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, internalRegistroLayout.createSequentialGroup()
+                        .addComponent(btnVerificar)
+                        .addGap(103, 103, 103))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, internalRegistroLayout.createSequentialGroup()
+                        .addComponent(btnRegistrar)
+                        .addGap(91, 91, 91))))
+            .addGroup(internalRegistroLayout.createSequentialGroup()
+                .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(internalRegistroLayout.createSequentialGroup()
+                        .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(internalRegistroLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(lblCedula)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(internalRegistroLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(internalRegistroLayout.createSequentialGroup()
+                                        .addComponent(lblDireccion)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(internalRegistroLayout.createSequentialGroup()
+                                            .addComponent(lblCorreo)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(internalRegistroLayout.createSequentialGroup()
+                                            .addComponent(lblNombre1)
+                                            .addGap(24, 24, 24)
+                                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(internalRegistroLayout.createSequentialGroup()
+                                        .addComponent(lblTelefono)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 44, Short.MAX_VALUE))
+                    .addComponent(lblError1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
+        internalRegistroLayout.setVerticalGroup(
+            internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, internalRegistroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCedula))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -191,29 +189,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblError1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNombre1))
-                        .addGap(15, 15, 15)
-                        .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombre1))
+                .addGap(18, 18, 18)
+                .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCorreo))
-                .addGap(23, 23, 23)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDireccion)
-                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTelefono)
-                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDireccion))
+                .addGap(18, 18, 18)
+                .addGroup(internalRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTelefono))
                 .addGap(28, 28, 28)
                 .addComponent(btnRegistrar)
-                .addGap(10, 10, 10))
+                .addGap(39, 39, 39))
         );
 
-        jInternalFrame2.setTitle("Buscar libro");
-        jInternalFrame2.setVisible(true);
+        internalBuscar.setTitle("Buscar libro");
+        internalBuscar.setVisible(true);
 
         jLabel2.setText("Codigo :");
 
@@ -240,59 +237,207 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
-        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
-        jInternalFrame2Layout.setHorizontalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
+        javax.swing.GroupLayout internalBuscarLayout = new javax.swing.GroupLayout(internalBuscar.getContentPane());
+        internalBuscar.getContentPane().setLayout(internalBuscarLayout);
+        internalBuscarLayout.setHorizontalGroup(
+            internalBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, internalBuscarLayout.createSequentialGroup()
+                .addGroup(internalBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, internalBuscarLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblNombreDato, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, internalBuscarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblAutorDato, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(btnBuscar)))
-                .addGap(0, 49, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
+                        .addComponent(lblAutorDato, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, internalBuscarLayout.createSequentialGroup()
+                .addGroup(internalBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, internalBuscarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(internalBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodigoLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(internalBuscarLayout.createSequentialGroup()
+                                .addComponent(btnBuscar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblError2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCodigoLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame2Layout.createSequentialGroup()
+                                .addComponent(lblError2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, internalBuscarLayout.createSequentialGroup()
                         .addGap(87, 87, 87)
-                        .addComponent(btnAceptar)))
+                        .addComponent(btnAceptar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, internalBuscarLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(lblDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jInternalFrame2Layout.setVerticalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+        internalBuscarLayout.setVerticalGroup(
+            internalBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(internalBuscarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(internalBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtCodigoLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblError2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(internalBuscarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblError2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar))
+                .addGap(43, 43, 43)
                 .addComponent(lblDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblNombreDato, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblAutorDato, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                 .addComponent(btnAceptar)
                 .addContainerGap())
+        );
+
+        btnPrestar.setText("Prestar");
+        btnPrestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrestarActionPerformed(evt);
+            }
+        });
+
+        btnDevolver.setText("Devolver");
+        btnDevolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDevolverActionPerformed(evt);
+            }
+        });
+
+        btnDisponibles.setText("Libros Disponibles");
+        btnDisponibles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDisponiblesActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel1.setText("Bienvenidos a la biblioteca");
+
+        btnLibrosPrestados.setText("Libros Prestados");
+        btnLibrosPrestados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLibrosPrestadosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnDevolver)
+                            .addComponent(btnPrestar)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnDisponibles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnLibrosPrestados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPrestar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDevolver)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDisponibles)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLibrosPrestados)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblcedulaDev.setText("Cedula :");
+
+        txtCedulaDev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCedulaDevActionPerformed(evt);
+            }
+        });
+
+        lblCodigoLibroDev.setText("Codigo Libro :");
+
+        txtCodigoLibroDev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoLibroDevActionPerformed(evt);
+            }
+        });
+
+        btnDevolverLibro.setText("Devolver");
+        btnDevolverLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDevolverLibroActionPerformed(evt);
+            }
+        });
+
+        ComprobarC.setText("Comprobar");
+        ComprobarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComprobarCActionPerformed(evt);
+            }
+        });
+
+        ComprobarCod.setText("Comprobar");
+        ComprobarCod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComprobarCodActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(lblcedulaDev)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtCedulaDev, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblCodigoLibroDev)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtCodigoLibroDev, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ComprobarC)
+                    .addComponent(ComprobarCod))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnDevolverLibro)
+                .addGap(92, 92, 92))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblcedulaDev)
+                    .addComponent(txtCedulaDev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComprobarC))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCodigoLibroDev)
+                    .addComponent(txtCodigoLibroDev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComprobarCod))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnDevolverLibro)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -302,40 +447,33 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnDevolver)
-                                    .addComponent(btnPrestar)
-                                    .addComponent(btnDisponibles)))))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(27, 27, 27)
-                .addComponent(jInternalFrame1)
-                .addContainerGap())
+                        .addComponent(internalBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(internalRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(95, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnPrestar)
-                        .addGap(13, 13, 13)
-                        .addComponent(btnDevolver)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDisponibles)
-                        .addGap(19, 19, 19)
-                        .addComponent(jInternalFrame2))))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(internalBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(internalRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -343,7 +481,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnPrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrestarActionPerformed
         if(evt.getSource()==btnPrestar){
-            jInternalFrame1.setVisible(true);
+            internalRegistro.setVisible(true);
+            jPanel1.setVisible(false);
             //usuario.setVisible(true);
            // usuario.setUsuariosCopia(inicial.getUsuarios());
         }
@@ -356,7 +495,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDisponiblesActionPerformed
 
     private void btnDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverActionPerformed
-        // TODO add your handling code here:
+        jPanel1.setVisible(false);
+        if(evt.getSource()==btnDevolver){
+          jPanel2.setVisible(true);
+          for(int i =0; i<inicial.getUsuarios().size();i++){
+            if(txtCedulaDev.getText().equalsIgnoreCase(inicial.getUsuarios().get(i).getCedula())){
+                
+            }
+            
+        }
+        }
     }//GEN-LAST:event_btnDevolverActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
@@ -364,12 +512,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             if(!lblNombreDato.getText().equalsIgnoreCase("")&& !lblAutorDato.getText().equalsIgnoreCase("")){
                 for(int i =0; i<inicial.getLibros().size(); i++){
                     if(txtCodigoLibro.getText().equalsIgnoreCase(inicial.getLibros().get(i).getCodigo())){
-                        if(!inicial.getLibros().get(i).usuarioConEsteLibro(inicial.getUsuarioActual())){
-                            inicial.prestarLibro(inicial.getLibros().get(i));
-                            inicial.disponibles();
-                        } else {
-                            lblError2.setText("Este usuario ya ha pedido el libro");
-                        }
+                       
+                        inicial.prestarLibro(inicial.getLibros().get(i));
+                        inicial.disponibles();
+                        jPanel1.setVisible(true);
+                        internalBuscar.dispose();
+                        
                         
                         break;
                     }
@@ -413,8 +561,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             {
                 if(inicial.getUsuarios().get(i).getCedula().equals(txtCedula.getText())){
                     inicial.setUsuarioActual(inicial.getUsuarios().get(i));
-                    jInternalFrame1.dispose();
-                    jInternalFrame2.setVisible(true);
+                    internalRegistro.dispose();
+                    internalBuscar.setVisible(true);
                        
                 } else
                 {
@@ -444,9 +592,59 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         inicial.registrarUsuario(nombre, cedula, correo, direccion, telefono);
         
-        jInternalFrame1.dispose();
-        jInternalFrame2.setVisible(true);
+        JOptionPane.showMessageDialog(null, inicial.getUsuarioActual().getNombre());
+        internalRegistro.dispose();
+        internalBuscar.setVisible(true);
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void txtCedulaDevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaDevActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCedulaDevActionPerformed
+
+    private void txtCodigoLibroDevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoLibroDevActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoLibroDevActionPerformed
+
+    private void ComprobarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprobarCActionPerformed
+        if(evt.getSource()==ComprobarC){
+            for(int i=0; i<inicial.getUsuarios().size();i++){
+            if(inicial.getUsuarios().get(i).getCedula().equalsIgnoreCase(txtCedulaDev.getText())){
+                ComprobarCod.setVisible(true);
+                txtCodigoLibroDev.setVisible(true);
+                lblCodigoLibroDev.setVisible(true);
+            }
+            
+            }
+        }
+    }//GEN-LAST:event_ComprobarCActionPerformed
+
+    private void ComprobarCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprobarCodActionPerformed
+       if(evt.getSource()==ComprobarCod){
+           for(int i=0; i<inicial.getLibrosPrestados().size();i++){
+               if(txtCodigoLibroDev.getText().equalsIgnoreCase(inicial.getLibrosPrestados().get(i).getCodigo())
+                  && inicial.getLibrosPrestados().get(i).getPrestamistas().getCedula().equalsIgnoreCase(txtCedulaDev.getText())){
+                   btnDevolverLibro.setVisible(true);
+               }
+           }
+       }
+    }//GEN-LAST:event_ComprobarCodActionPerformed
+
+    private void btnDevolverLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverLibroActionPerformed
+        if(evt.getSource()==btnDevolverLibro){
+            for(int i=0; i<inicial.getLibrosPrestados().size();i++){
+                if(inicial.getLibrosPrestados().get(i).getCodigo().equalsIgnoreCase(txtCodigoLibroDev.getText())){
+                    inicial.devolveLibro(inicial.getLibrosPrestados().get(i));
+                    inicial.disponibles();
+                }
+            }
+        }
+    }//GEN-LAST:event_btnDevolverLibroActionPerformed
+
+    private void btnLibrosPrestadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLibrosPrestadosActionPerformed
+       if(evt.getSource()==btnLibrosPrestados){
+           inicial.librosPrestados();
+       }
+    }//GEN-LAST:event_btnLibrosPrestadosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -484,19 +682,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ComprobarC;
+    private javax.swing.JButton ComprobarCod;
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnDevolver;
+    private javax.swing.JButton btnDevolverLibro;
     private javax.swing.JButton btnDisponibles;
+    private javax.swing.JButton btnLibrosPrestados;
     private javax.swing.JButton btnPrestar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnVerificar;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JInternalFrame jInternalFrame2;
+    private javax.swing.JInternalFrame internalBuscar;
+    private javax.swing.JInternalFrame internalRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblAutorDato;
     private javax.swing.JLabel lblCedula;
+    private javax.swing.JLabel lblCodigoLibroDev;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblDatos;
     private javax.swing.JLabel lblDireccion;
@@ -505,8 +710,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombre1;
     private javax.swing.JLabel lblNombreDato;
     private javax.swing.JLabel lblTelefono;
+    private javax.swing.JLabel lblcedulaDev;
     private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCedulaDev;
     private javax.swing.JTextField txtCodigoLibro;
+    private javax.swing.JTextField txtCodigoLibroDev;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombre;
